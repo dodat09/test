@@ -9,16 +9,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+//@NamedQuery(name="Author.findConditionAge",query="select a from author a where a.age< 18")
 @Table(name="author")
 public class Author { 
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name="author_id")
+@Column(name="id")
 private Long id;
 @Column
 private String name;
@@ -74,15 +76,13 @@ public void setAge(int age) {
 	this.age = age;
 }
 
-//public Book getBook() {
-//	return book;
+//public List<Book> getBooks() {
+//	return books;
 //}
 //
-//public void setBook(Book book) {
-//	this.book = book;
+//public void setBooks(List<Book> books) {
+//	this.books = books;
 //}
-
-
 
 }
 
